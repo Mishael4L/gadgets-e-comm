@@ -1,0 +1,823 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "e4h5twvf8dvkn475in0ttlqel5hja7wa",
+  "fields": {
+    "session_data": ".eJxVjEsOgzAMBe_idRVhkhjCsnvOgBw7KbQVSHxWiLu3SGzYvpl5OwjPKzQ7OGjweEDH29p325LmblBoAOG2RZZPGk-gbx5fk5FpXOchmlMxF11MO2n6Pi_3dtDz0v9rklBYL1giqUpdOpWC6wIDKUYbKrKlJPJM7LJYid75nDNSoFRXTiIcP8VFPAQ:1x77bV:LI-ZBFrjaSFdRcvIqf5G1EbizfoL97y0cN6LpPvbTmE",
+    "expire_date": "2026-10-01T08:36:25.842Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "upq6eku9i8w037t8znyi99h8ykjz2pqm",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAoMAWX7j0DGWZAqqYkpV0Z765NutDtf-_9l4i4rTVuPS9xYnEWWpx-t4T0yPMO-I7zrUlq87pMSe6KPGiX18b5eTncv4OKvX5roKCMIz1oYCY_WCaFXukArJMJI5iBMjgEtIUMJWddKUVDgOxHS0m8P9NON9U:1x3XLV:IvUsLKQ0KDEa2Vm3SmZVt4pDfj9hQoP5JAu5e5G26r8",
+    "expire_date": "2026-09-21T11:17:05.811Z"
+  }
+},
+{
+  "model": "authapp.user",
+  "fields": {
+    "password": "pbkdf2_sha256$260000$pFIlNkBFoRfN7M6JNWGNAN$XFLOrsb/izySC8A4K67ZxJUTc//8f3VwOJmhqNVSsEQ=",
+    "last_login": "2026-09-17T08:36:25.824Z",
+    "is_superuser": true,
+    "email": "mishaelmillions@gmail.com",
+    "first_name": "",
+    "last_name": "",
+    "is_active": true,
+    "is_staff": true,
+    "date_joined": "2026-09-03T18:12:20.954Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "storeapp.base",
+  "pk": 1,
+  "fields": {
+    "company": "Mishael",
+    "footer": "Modern technologies & gadgets straight from the makers, shipped fast, supported well. Since 2018, we've moved over 400,000 boxes.",
+    "x": "https://x.com/99mishael",
+    "ln": "https://x.com/99mishael",
+    "ig": "https://x.com/99mishael",
+    "yt": "https://x.com/99mishael"
+  }
+},
+{
+  "model": "storeapp.category",
+  "pk": 1,
+  "fields": {
+    "name": "Mobile Smartphones",
+    "slug": "smart-phones"
+  }
+},
+{
+  "model": "storeapp.category",
+  "pk": 3,
+  "fields": {
+    "name": "Laptops & Desktops",
+    "slug": "laptops-desktops"
+  }
+},
+{
+  "model": "storeapp.category",
+  "pk": 8,
+  "fields": {
+    "name": "Tablets & iPad",
+    "slug": "tab"
+  }
+},
+{
+  "model": "storeapp.category",
+  "pk": 9,
+  "fields": {
+    "name": "Gaming Consoles",
+    "slug": "gaming-consoles"
+  }
+},
+{
+  "model": "storeapp.category",
+  "pk": 10,
+  "fields": {
+    "name": "Cameras",
+    "slug": "cameras"
+  }
+},
+{
+  "model": "storeapp.category",
+  "pk": 11,
+  "fields": {
+    "name": "Accessories",
+    "slug": "accessories"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 1,
+  "fields": {
+    "name": "Apple",
+    "slug": "apple"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 2,
+  "fields": {
+    "name": "Samsung",
+    "slug": "samsung"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 3,
+  "fields": {
+    "name": "Xiaomi",
+    "slug": "xiaomi"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 4,
+  "fields": {
+    "name": "Oppo",
+    "slug": "oppo"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 5,
+  "fields": {
+    "name": "Huawei",
+    "slug": "huawei"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 6,
+  "fields": {
+    "name": "Tecno",
+    "slug": "tecno"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 7,
+  "fields": {
+    "name": "Infinix",
+    "slug": "infinix"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 8,
+  "fields": {
+    "name": "Gionee",
+    "slug": "gionee"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 9,
+  "fields": {
+    "name": "Itel",
+    "slug": "itel"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 10,
+  "fields": {
+    "name": "HP",
+    "slug": "hp"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 11,
+  "fields": {
+    "name": "DELL",
+    "slug": "dell"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 12,
+  "fields": {
+    "name": "Lenovo",
+    "slug": "lenovo"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 13,
+  "fields": {
+    "name": "Asus",
+    "slug": "asus"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 14,
+  "fields": {
+    "name": "Alienware",
+    "slug": "alienware"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 15,
+  "fields": {
+    "name": "Amazon",
+    "slug": "amazon"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 16,
+  "fields": {
+    "name": "Sony",
+    "slug": "sony"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 17,
+  "fields": {
+    "name": "Xbox",
+    "slug": "xbox"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 18,
+  "fields": {
+    "name": "Nintendo",
+    "slug": "nintendo"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 19,
+  "fields": {
+    "name": "Microsoft",
+    "slug": "microsoft"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 20,
+  "fields": {
+    "name": "Canon",
+    "slug": "canon"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 21,
+  "fields": {
+    "name": "Nikon",
+    "slug": "nikon"
+  }
+},
+{
+  "model": "storeapp.brand",
+  "pk": 22,
+  "fields": {
+    "name": "Fujifilm",
+    "slug": "fujifilm"
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 2,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=900&q=80&auto=format&fit=crop",
+    "name": "Apple HomePod 2nd Gen Speaker",
+    "slug": "apple-homepod-2nd-gen-speaker",
+    "category": 11,
+    "brand": 1,
+    "rating": null,
+    "stock": 22,
+    "description": "Spatial audio, room-sensing tech, and the centrepiece of your Apple ecosystem. Built-in S7             chip, dynamic computational audio, and seamless handoff from iPhone. The new HomePod is designed",
+    "price_now": 280,
+    "price_was": 320,
+    "save_perc": 12,
+    "is_featured": false
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 3,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80&auto=format&fit=crop",
+    "name": "Galaxy Note 20 Ultra 5G",
+    "slug": "galaxy-note-20-ultra-5g",
+    "category": 1,
+    "brand": 2,
+    "rating": null,
+    "stock": 56,
+    "description": "Galaxy Note 20 Ultra 5G blends a stunning display, powerful performance, pro-grade cameras, 5G speed, and S Pen productivity in a sleek, premium smartphone built for work and play. on the go, too.",
+    "price_now": 2780,
+    "price_was": 2980,
+    "save_perc": 7,
+    "is_featured": false
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 4,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=500&q=80&auto=format&fit=crop",
+    "name": "iPad 10th Generation",
+    "slug": "ipad-10th-generation",
+    "category": 8,
+    "brand": 1,
+    "rating": null,
+    "stock": 12,
+    "description": "iPad 10th Generation combines a vibrant 10.9-inch display, powerful performance, USB-C connectivity, and all-day battery life in a sleek design, perfect for work, study, streaming, and creativity.",
+    "price_now": 1780,
+    "price_was": 1980,
+    "save_perc": 7,
+    "is_featured": true
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 5,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80&auto=format&fit=crop",
+    "name": "Apple MacBook Pro M3",
+    "slug": "apple-macbook-pro-m3",
+    "category": 3,
+    "brand": 1,
+    "rating": null,
+    "stock": 12,
+    "description": "Apple MacBook Pro M3 delivers powerful performance, a stunning display, long battery life, and a sleek design, making it ideal for professionals, creators, students, and everyday productivity.",
+    "price_now": 2480,
+    "price_was": 2630,
+    "save_perc": 6,
+    "is_featured": true
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 6,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500&q=80&auto=format&fit=crop",
+    "name": "Canon EOS R7 DSLR",
+    "slug": "canon-eos-r7-dslr",
+    "category": 10,
+    "brand": 20,
+    "rating": null,
+    "stock": 13,
+    "description": "Canon EOS R7 is a powerful mirrorless camera with a 32.5MP sensor, fast autofocus, 4K video, image stabilization, and high-speed shooting, ideal for wildlife, sports, travel, and creators.",
+    "price_now": 1920,
+    "price_was": 2120,
+    "save_perc": 10,
+    "is_featured": false
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 7,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80&auto=format&fit=crop",
+    "name": "Apple Watch Series 9",
+    "slug": "apple-watch-series-9",
+    "category": 11,
+    "brand": 1,
+    "rating": null,
+    "stock": 43,
+    "description": "Apple Watch Series 9 delivers powerful performance, a bright display, health tracking, fitness features, and seamless iPhone connectivity in a stylish design for everyday use and activity.",
+    "price_now": 680,
+    "price_was": 730,
+    "save_perc": 7,
+    "is_featured": false
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 8,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500&q=80&auto=format&fit=crop",
+    "name": "Beats Studio Buds Pro",
+    "slug": "beats-studio-buds-pro",
+    "category": 11,
+    "brand": 2,
+    "rating": null,
+    "stock": 67,
+    "description": "Beats Studio Buds Pro deliver immersive sound, active noise cancellation, transparency mode, comfortable in-ear fit, and long battery life, making them ideal for music, calls, travel, and workouts.",
+    "price_now": 280,
+    "price_was": 280,
+    "save_perc": 0,
+    "is_featured": true
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 9,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80&auto=format&fit=crop",
+    "name": "Apple HomePod 2nd Gen",
+    "slug": "apple-homepod-2nd-gen",
+    "category": 11,
+    "brand": 1,
+    "rating": null,
+    "stock": 46,
+    "description": "Spatial audio, room-sensing tech, and the centrepiece of your Apple ecosystem. Built-in S7             chip, dynamic computational audio, and seamless handoff from iPhone. The new HomePod is designed",
+    "price_now": 280,
+    "price_was": 320,
+    "save_perc": 13,
+    "is_featured": false
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 10,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=500&q=80&auto=format&fit=crop",
+    "name": "Power Wired Controller",
+    "slug": "power-wired-controller",
+    "category": 9,
+    "brand": 16,
+    "rating": null,
+    "stock": 34,
+    "description": "Power Wired Controller offers responsive buttons, precise controls, a comfortable grip, and reliable wired connectivity, making it a great choice for gaming sessions at home or on the go.",
+    "price_now": 190,
+    "price_was": 190,
+    "save_perc": 0,
+    "is_featured": true
+  }
+},
+{
+  "model": "storeapp.product",
+  "pk": 11,
+  "fields": {
+    "image": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500&q=80&auto=format&fit=crop",
+    "name": "Galaxy S24 Ultra Mint",
+    "slug": "galaxy-s24-ultra-mint",
+    "category": 1,
+    "brand": 2,
+    "rating": null,
+    "stock": 57,
+    "description": "Galaxy S24 Ultra Mint combines a stunning display, powerful performance, advanced cameras, long battery life, and Pen functionality in a premium design, perfect for work, creativity, and entertainment",
+    "price_now": 1420,
+    "price_was": 1540,
+    "save_perc": 8,
+    "is_featured": false
+  }
+},
+{
+  "model": "storeapp.messageform",
+  "pk": 1,
+  "fields": {
+    "first_name": "olaoye",
+    "last_name": "champ",
+    "email": "mishaelmillions@gmail.com",
+    "phone": "08168899752",
+    "subject": "order",
+    "order_number": "",
+    "message": "you are building something really nice. welldone",
+    "submitted_at": "2026-09-04T14:58:19.440Z"
+  }
+},
+{
+  "model": "storeapp.contact",
+  "pk": 1,
+  "fields": {
+    "email": "mishaelmillions@gmail.com",
+    "phone": 8168699752,
+    "live_chat": "Open chat ΓÇö 4 agents online",
+    "address": "no.40 Irorunoluwa estate, soka, new felele, Ibadan, Oyo state."
+  }
+},
+{
+  "model": "storeapp.faq",
+  "pk": 1,
+  "fields": {
+    "question": "Where is my order?",
+    "answer": "Every order ships with a               tracking number sent by email within 2 hours of dispatch. Use the"
+  }
+},
+{
+  "model": "storeapp.faq",
+  "pk": 2,
+  "fields": {
+    "question": "How do returns work?",
+    "answer": "30 days, no questions asked.               Initiate from your account ΓåÆ orders ΓåÆ return. We email a prepaid label; drop off at any carrier point.               Refund hits your card 3 ΓÇô 5 business day"
+  }
+},
+{
+  "model": "storeapp.faq",
+  "pk": 3,
+  "fields": {
+    "question": "Do you ship internationally?",
+    "answer": "Yes ΓÇö to 48 countries. Free               standard shipping on orders over $50 to the US, EU, UK, Canada, and Australia. Other destinations carry a               flat shipping fee shown at checkout."
+  }
+},
+{
+  "model": "storeapp.faq",
+  "pk": 4,
+  "fields": {
+    "question": "What is the warranty?",
+    "answer": "Every Sprylo order ships with               a 2-year limited warranty in addition to the manufacturer's. Optional extended cover (3 or 5 years) can be               added at checkout from $39."
+  }
+},
+{
+  "model": "storeapp.order",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "created_at": "2026-09-07T11:15:33.757Z",
+    "total": "280.00"
+  }
+},
+{
+  "model": "storeapp.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 2,
+    "quantity": 1,
+    "price_at_purchase": "280.00"
+  }
+},
+{
+  "model": "storeapp.newslettersubscriber",
+  "pk": 1,
+  "fields": {
+    "email": "mishaelmillions@gmail.com",
+    "subscribed_at": "2026-09-16T09:44:25.995Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-09-04T15:24:42.830Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "3",
+    "object_repr": "Galaxy Note 20 Ultra 5G",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-09-04T15:41:59.595Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "iPad 10th Generation",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-09-04T15:49:36.891Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "5",
+    "object_repr": "Apple MacBook Pro M3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-09-04T15:53:30.689Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "6",
+    "object_repr": "Canon EOS R7 DSLR",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-09-04T15:58:29.494Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "7",
+    "object_repr": "Apple Watch Series 9",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-09-04T16:02:11.324Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "8",
+    "object_repr": "Beats Studio Buds Pro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-09-04T16:05:58.983Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "9",
+    "object_repr": "Apple HomePod 2nd Gen",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-09-04T16:11:50.116Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "10",
+    "object_repr": "Power Wired Controller",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-09-04T16:12:59.332Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "9",
+    "object_repr": "Apple HomePod 2nd Gen",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-09-04T16:17:16.855Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "11",
+    "object_repr": "Galaxy S24 Ultra Mint",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-09-07T09:47:37.744Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "8",
+    "object_repr": "Beats Studio Buds Pro",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-09-07T09:47:58.596Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "5",
+    "object_repr": "Apple MacBook Pro M3",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-09-07T09:48:08.260Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "4",
+    "object_repr": "iPad 10th Generation",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-09-07T09:48:18.276Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "product"
+    ],
+    "object_id": "10",
+    "object_repr": "Power Wired Controller",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-09-17T08:56:22.081Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "base"
+    ],
+    "object_id": "1",
+    "object_repr": "Mishael",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Footer\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-09-17T08:56:53.810Z",
+    "user": [
+      "mishaelmillions@gmail.com"
+    ],
+    "content_type": [
+      "storeapp",
+      "base"
+    ],
+    "object_id": "1",
+    "object_repr": "Mishael",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Footer\"]}}]"
+  }
+}
+]
