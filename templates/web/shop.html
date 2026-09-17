@@ -1,0 +1,101 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="container">
+      <div class="crumbs"><a href="{% url 'landing' %}">Home</a> <span class="sep">›</span> <span>Shop · All
+          products</span>
+      </div>
+      <h1>All Products</h1>
+      <p>Over 999+ products across smartphones, laptops, audio, cameras, wearables, and gaming. Use the filters on the
+        left
+        to narrow down by category, brand, or price.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="shop-layout">
+
+        <aside class="filters" aria-label="Filters">
+          <form method="GET" action="{% url 'shop' %}">
+            <div class="filter-block">
+              <h3>Category</h3>
+              {% for cat in category %}
+              <label><input type="checkbox" name="category" value="{{ cat.slug }}" {% if cat.slug in selected_category_slugs %}checked{% endif %}> {{ cat.name }} <span class="ct">{{ cat.product_count }}</span></label>
+              {% endfor %}
+            </div>
+
+            <div class="filter-block">
+              <h3>Price range</h3>
+              <div class="price-inputs">
+                <input type="number" name="min_price" placeholder="Min" value="{{ min_price }}" class="price-input">
+                <input type="number" name="max_price" placeholder="Max" value="{{ max_price }}" class="price-input">
+              </div>
+            </div>
+
+            <div class="filter-block">
+              <h3>Brand</h3>
+              {% for b in brand %}
+              <label>
+                <input type="checkbox" name="brand" value="{{ b.slug }}" {% if b.slug in selected_brand_slugs %} checked
+                  {% endif %}> {{ b.name }} <span class="ct">{{ b.product_count }}</span>
+              </label>
+              {% endfor %}
+            </div>
+            <button type="submit" class="btn btn--indigo btn--block">Apply filters</button>
+          </form>
+        </aside>
+
+        <div>
+          <div class="shop-grid">
+            {% for p in page_obj %}
+            <article class="product-card">
+              <div class="img-wrap"><span class="badge">New</span><button class="wishlist">♡</button><img
+                  src="{{ p.image }}" alt="{{ p.name }}" /></div>
+              <div class="stock"><span class="dot"></span>In stock · {{p.stock}} items</div>
+              <a href="{% url 'product' p.slug %}" class="name">{{ p.name }}</a>
+              <div class="price"><span class="now">${{ p.price_now }}</span></div>
+              <div class="stars">★★★★★ <span class="count">{{total_count}}</span></div>
+              <a href="{% url 'add_to_cart' p.slug %}" class="btn">Order now →</a>
+            </article>
+            {% empty %}
+            <p>No products match your selected filters</p>
+            {% endfor %}
+          </div>
+        </div>
+  </section>
+  
+  {% if page_obj.has_other_pages %}
+  <div class="pagination">
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}{% for slug in selected_category_slugs %}&category={{ slug }}{% endfor %}{% for slug in selected_brand_slugs %}&brand={{ slug }}{% endfor %}{% if min_price %}&min_price={{ min_price }}{% endif %}{% if max_price %}&max_price={{ max_price }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pg">‹</a>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      <a href="?page={{ num }}{% for slug in selected_category_slugs %}&category={{ slug }}{% endfor %}{% for slug in selected_brand_slugs %}&brand={{ slug }}{% endfor %}{% if min_price %}&min_price={{ min_price }}{% endif %}{% if max_price %}&max_price={{ max_price }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pg {% if num == page_obj.number %}is-active{% endif %}">{{ num }}</a>
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}{% for slug in selected_category_slugs %}&category={{ slug }}{% endfor %}{% for slug in selected_brand_slugs %}&brand={{ slug }}{% endfor %}{% if min_price %}&min_price={{ min_price }}{% endif %}{% if max_price %}&max_price={{ max_price }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pg">›</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <section class="brands">
+    <div class="container">
+      <div class="brand-row">
+        <a href="#" class="brand-logo">HP</a><a href="#" class="brand-logo">Huawei</a>
+        <a href="#" class="brand-logo">Nokia</a><a href="#" class="brand-logo">Samsung</a>
+        <a href="#" class="brand-logo">Canon</a><a href="#" class="brand-logo">Sony</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+{% endblock %}

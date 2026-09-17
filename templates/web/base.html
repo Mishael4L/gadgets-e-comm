@@ -1,0 +1,227 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mishael — Tech &amp; Gadgets Ecommerce HTML Template</title>
+  <meta name="description"
+    content="Mishael is a free modern HTML template for tech and electronics stores — multi-color bento hero, indigo primary palette, Plus Jakarta + Outfit + Roboto Mono pair, 5 fully responsive pages, no framework, no build step." />
+  <meta name="theme-color" content="#4F46E5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}" />
+</head>
+
+<body>
+  {% if messages %}
+  <div class="container" style="padding-top: var(--s3)">
+    {% for message in messages %}
+    <div class="alert {% if message.tags %}alert--{{ message.tags }}{% endif %}"
+      style="padding: 12px 16px; border-radius: var(--r); margin-bottom: 8px; background: {% if message.tags == 'success' %}#DCFCE7{% elif message.tags == 'error' %}#FEE2E2{% else %}#FEF3C7{% endif %};">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Top utility strip -->
+  <div class="utility">
+    <div class="container">
+      <span class="promo">
+        <span class="tag">SALE</span>
+        Free shipping on orders over $50 · 30-day returns
+      </span>
+      <span class="links">
+        <a href="{% url 'contact' %}">Track order</a>
+        <a href="{% url 'contact' %}">Help</a>
+        <!-- <a href="#">EN · USD</a> -->
+      </span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="{% url 'landing' %}" class="brand">
+        <span class="brand-mark">M</span>
+        {{ base.company }}
+      </a>
+
+      <form class="search" role="search" method="GET" action="{% url 'shop' %}">
+        <input type="text" name="q" placeholder="Search for products, brands, categories…" aria-label="Search the store"
+          value="{{ request.GET.q }}" />
+        <button type="submit" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M21 21l-4.3-4.3" />
+          </svg>
+        </button>
+      </form>
+
+      <div class="icon-row">
+        {% if user.is_authenticated %}
+        <a href="{% url 'order_history' %}" class="icon-btn" aria-label="Account" style="display:flex; align-items:center; gap:6px; width:auto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 4-7 8-7s8 3 8 7" />
+          </svg>
+          <span style="font-size: var(--text-sm)">{{ user.first_name }}</span>
+        </a>
+        <a href="{% url 'logout' %}" class="icon-btn" aria-label="Logout"
+          style="width:auto; font-size: var(--text-sm)">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="icon-btn" aria-label="Login"
+          style="width:auto; font-size: var(--text-sm)">Login</a>
+        {% endif %}
+        <!-- <a href="#" class="icon-btn" aria-label="Account"> -->
+        <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg> -->
+        <!-- </a> -->
+        <!-- <a href="#" class="icon-btn" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="count">3</span>
+        </a> -->
+        <a href="{% url 'cart' %}" class="icon-btn icon-btn--cart" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2l-2 5v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7l-2-5z" />
+            <path d="M4 7h16" />
+            <path d="M16 11a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="count">{{ cart_count }}</span>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">≡</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category nav -->
+  <nav class="nav-bar" aria-label="Primary">
+    <div class="container">
+      <!-- <a href="{% url 'shop' %}" class="all-cats">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+          stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        All Categories
+      </a> -->
+      <div class="main-nav">
+        <a href="{% url 'landing' %}" aria-current="page">Home</a>
+        <a href="{% url 'shop' %}">Shop</a>
+        <!-- <a href="{% url 'shop' %}">Products</a> -->
+        <a href="{% url 'cart' %}">Cart</a>
+        <a href="{% url 'contact' %}">Contact</a>
+      </div>
+      <span class="nav-cta">UP TO <strong>60% OFF</strong> ALL ITEMS</span>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <a href="{% url 'landing' %}" class="brand"><span class="brand-mark">M</span>{{ company }}</a>
+      <button class="drawer-close" aria-label="Close menu">Close ✕</button>
+    </div>
+    <a href="{% url 'landing' %}">Home</a>
+    <a href="{% url 'shop' %}">Shop</a>
+    <!-- <a href="{% url 'shop' %}">Products</a> -->
+    <a href="{% url 'cart' %}">Cart</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="cart.html" class="btn btn--indigo" style="margin-top:var(--s5); justify-content:center">View cart →</a>
+  </div>
+
+  {% block content%}
+
+  {% endblock %}
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="mark"><span class="brand-mark">M</span>{{ base.company }}</div>
+          <p>{{ base.footer }}</p>
+          <div class="socials" style="margin-top:var(--s4)">
+            <a href="{{ base.x }}" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M22 5.8a8.5 8.5 0 0 1-2.4.7 4.2 4.2 0 0 0 1.8-2.3 8.4 8.4 0 0 1-2.6 1 4.2 4.2 0 0 0-7.2 3.8A11.9 11.9 0 0 1 3 4.8a4.2 4.2 0 0 0 1.3 5.6 4.2 4.2 0 0 1-1.9-.5v.1a4.2 4.2 0 0 0 3.4 4.1 4.2 4.2 0 0 1-1.9.1 4.2 4.2 0 0 0 3.9 2.9A8.4 8.4 0 0 1 2 18.7 11.9 11.9 0 0 0 8.5 21c7.7 0 11.9-6.4 11.9-11.9v-.5A8.5 8.5 0 0 0 22 5.8z" />
+              </svg></a>
+            <a href="{{ base.ln }}" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8 18H5v-7h3v7zM6.5 9.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4zM18 18h-3v-4c0-1-.4-1.6-1.4-1.6S12 13 12 14v4H9v-7h3v1c.5-.8 1.4-1.2 2.4-1.2 2 0 3.6 1.4 3.6 4V18z" />
+              </svg></a>
+            <a href="{{ base.ig }}" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg></a>
+            <a href="{{ base.yt }}" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M23 7s-.2-1.5-.9-2.2c-.8-.9-1.8-.9-2.2-1C16.6 3.5 12 3.5 12 3.5s-4.6 0-7.9.3c-.4 0-1.4 0-2.2 1C1.2 5.5 1 7 1 7s-.2 1.7-.2 3.5v1.6c0 1.7.2 3.5.2 3.5s.2 1.5.9 2.2c.8.9 1.9.8 2.4.9 1.7.2 7.7.3 7.7.3s4.6 0 7.9-.3c.4 0 1.4 0 2.2-1 .7-.7.9-2.2.9-2.2s.2-1.7.2-3.5V10.5c0-1.7-.2-3.5-.2-3.5zM9.7 14.5V8.4l6 3-6 3.1z" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Popular Categories</h4>
+          <ul>
+            {% for cat in category %}
+            <li><a href="{% url 'shop' %}?category={{ cat.slug }}">{{ cat.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Let us help you</h4>
+          <ul>
+            <li><a href="{% url 'login' %}">My account</a></li>
+            <li><a href="{% url 'contact' %}">My order</a></li>
+            <li><a href="{% url 'contact' %}">Shipping policy</a></li>
+            <li><a href="{% url 'contact' %}">Help centre</a></li>
+            <!-- <li><a href="#">Events</a></li> -->
+            <li><a href="{% url 'shop' %}">Popular products</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="{% url 'contact' %}">Newsletter</a></li>
+            <li><a href="{% url 'contact' %}">Help centre</a></li>
+            <li><a href="{% url 'contact' %}">Support</a></li>
+            <li><a href="{% url 'contact' %}">Reviews</a></li>
+            <li><a href="{% url 'contact' %}">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get to know us</h4>
+          <ul>
+            <li><a href="{% url 'contact' %}">About us</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'register' %}">Login / Register</a></li>
+            <li><a href="{% url 'contact' %}">Terms &amp; conditions</a></li>
+            <li><a href="{% url 'contact' %}">Privacy policy</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Mishael · All rights reserved</span>
+        <!-- <span>Free HTML template · No framework · No build step. Distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></span> -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'assets/js/main.js' %}" defer></script>
+</body>
+
+</html>

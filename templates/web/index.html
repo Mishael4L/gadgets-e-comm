@@ -1,0 +1,248 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<main id="main">
+
+  <!-- HERO: bento grid -->
+  <section class="hero">
+    <div class="container">
+      <div class="bento">
+
+        <article class="bento-card bento-card--lg">
+          <div class="sparkle"></div>
+          <div>
+            <span class="eyebrow">⚡ Accessories &middot; Featured</span>
+            <h2>Apple HomePod<br />2nd Gen Speaker</h2>
+            <p>Apple ecosystem with high-quality audio playback while serving as a hub for controlling smart home
+              devices. Spatial audio, room-sensing tech.</p>
+            <a href="{% url 'shop' %}">Shop Now
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <!-- <div class="dots"><span class="active"></span><span></span><span></span></div> -->
+          </div>
+          <img class="cover-img" src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=900&q=80&auto=format&fit=crop" alt="HomePod speaker" />
+        </article>
+
+        <article class="bento-card bento-card--purple">
+          <div class="sparkle"></div>
+          <span class="eyebrow">Accesories</span>
+          <h3 style="font-size:var(--text-xl); line-height:1.15">Explore<br />Apple Watch</h3>
+          <a href="{% url 'shop' %}" class="shop-now">Shop Now
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <img class="cover-img" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&auto=format&fit=crop" alt="Apple Watch" />
+        </article>
+
+        <article class="bento-card bento-card--teal">
+          <div class="sparkle"></div>
+          <span class="eyebrow">Mobile Smartphones</span>
+          <h3 style="font-size:var(--text-xl); line-height:1.15">Galaxy S24<br />Ultra · 5G</h3>
+          <a href="{% url 'shop' %}" class="shop-now">Shop Now
+            <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <img class="cover-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80&auto=format&fit=crop" alt="Samsung Galaxy phone" />
+        </article>
+
+        <div class="bento-row">
+          <article class="bento-card bento-card--orange">
+            <div class="sparkle"></div>
+            <span class="eyebrow">Cameras</span>
+            <h3 style="font-size:var(--text-lg); line-height:1.2">Samsung<br />Gear Camera</h3>
+            <a href="{% url 'shop' %}" class="shop-now">Shop Now
+              <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <img class="cover-img" src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500&q=80&auto=format&fit=crop" alt="DSLR camera" />
+          </article>
+
+          <article class="bento-card bento-card--green">
+            <div class="sparkle"></div>
+            <span class="eyebrow">Accessories</span>
+            <h3 style="font-size:var(--text-lg); line-height:1.2">Beats<br />Studio Buds</h3>
+            <a href="{% url 'shop' %}" class="shop-now">Shop Now
+              <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <img class="cover-img" src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500&q=80&auto=format&fit=crop" alt="Earbuds" />
+          </article>
+
+          <article class="bento-card bento-card--black">
+            <div class="sparkle"></div>
+            <span class="eyebrow">Cameras</span>
+            <h3 style="font-size:var(--text-lg); line-height:1.2">Hero Camera<br />X-Series</h3>
+            <a href="{% url 'shop' %}" class="shop-now">Shop Now
+              <svg width="12" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <img class="cover-img" src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500&q=80&auto=format&fit=crop" alt="DSLR camera" />
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRENDING PRODUCTS -->
+  <section class="section" style="padding-top: var(--s5)">
+    <div class="container">
+      <div class="section-head">
+        <h2>Trending Products</h2>
+        <a href="{% url 'shop' %}" class="view-all">View all
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="tabs" role="tablist">
+        {% for cat in category %}
+        <a href="{% url 'shop' %}?category={{ cat.slug }}" class="tab"
+            {% if cat.slug in selected_slugs %}is-active
+            {% endif %}
+            role="tab" aria-selected="{% if cat.slug in selected_slugs %}
+            true
+            {% else %}
+            false
+            {% endif %}">
+          {{ cat.name }}
+        </a>
+        {% endfor %}
+      </div>
+
+      <div class="products">
+        {% for p in product %}
+        <article class="product-card">
+          <div class="img-wrap">
+            <span class="badge">New</span>
+            <button class="wishlist" aria-label="Wishlist">♡</button>
+            <img src="{{ p.image }}" alt="{{ p.name }}" />
+          </div>
+          <div class="stock"><span class="dot"></span>In stock · {{ p.stock }}</div>
+          <a href="{% url 'product' p.slug %}" class="name">{{ p.name }}</a>
+          <div class="price"><span class="now">${{ p.price_now }}</span></div>
+          <div class="stars">★★★★★ <span class="count">{{ total_count }} {{ total_count|pluralize }}</span></div>
+          <a href="{% url 'add_to_cart' p.slug %}" class="btn">Order now →</a>
+        </article>
+        {% empty %}
+        <p>No products match your selected filters</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCOUNT BANNERS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="discount-row">
+        <article class="discount-card discount-card--watch">
+          <span class="meta">THIS WEEK ONLY</span>
+          <h3>Mega Discounts<br /><span class="pct">50% Off</span></h3>
+          <a href="{% url 'shop' %}" class="shop-now">Shop Now
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+              <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <img class="product"
+            src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500&q=80&auto=format&fit=crop"
+            alt="Smart watch" />
+        </article>
+        <article class="discount-card discount-card--airpods">
+          <span class="meta">LIMITED EDITION</span>
+          <h3>Studio Buds Pro<br /><span class="pct">30% Off</span></h3>
+          <a href="{% url 'shop'  %}" class="shop-now">Shop Now
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+              <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <img class="product"
+            src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80&auto=format&fit=crop"
+            alt="Earbuds" />
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPACT row (4 cards in 2x2 layout) -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <h2>Just for you</h2>
+        <a href="{% url 'shop' %}" class="view-all">More picks
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+      <div class="compact-row">
+        {% for you in foryou %}
+        <article class="compact-card">
+          <div class="pic"><img src="{{ you.image }}" alt="{{ you.name }}" /></div>
+          <div>
+            <div class="stock">IN STOCK · {{ you.stock }}</div>
+            <div class="name">{{ you.name }}</div>
+            <div class="price">${{ you.price_now }}</div>
+            <a href="{% url 'add_to_cart' you.slug %}" class="btn">Order Now</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STRIP -->
+  <section class="brands">
+    <div class="container">
+      <div class="brand-row">
+        <a href="#" class="brand-logo">HP</a>
+        <a href="#" class="brand-logo">Huawei</a>
+        <a href="#" class="brand-logo">Nokia</a>
+        <a href="#" class="brand-logo">Samsung</a>
+        <a href="#" class="brand-logo">Canon</a>
+        <a href="#" class="brand-logo">Sony</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section style="background: var(--paper)">
+    <div class="container">
+      <div class="newsletter">
+        <div class="newsletter-grid">
+          <div>
+            <h2>Get <strong>20% Off</strong> your first order — straight to your inbox.</h2>
+            <p>Drop your email and we'll send a one-time discount, plus first-look offers on the gear we just got in.
+              Unsubscribe anytime.</p>
+          </div>
+          <form class="newsletter-form" method="POST" action="{% url 'newsletter_signup' %}">
+            {% csrf_token %}
+            <input type="email" name="email" required placeholder="Enter your email" aria-label="Email address" />
+            <button class="btn" type="submit">Subscribe →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{% endblock %}

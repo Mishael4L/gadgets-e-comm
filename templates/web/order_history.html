@@ -1,0 +1,31 @@
+{% extends 'web/base.html' %}
+{% block content %}
+<main id="main">
+  <div class="container" style="padding-top: var(--s6); padding-bottom: var(--s7)">
+    <h1>Your Orders</h1>
+
+    {% for order in orders %}
+      <div style="border: 1px solid var(--rule); border-radius: var(--r); padding: var(--s5); margin-bottom: var(--s4)">
+        <div style="display:flex; justify-content:space-between; margin-bottom: var(--s3)">
+          <strong>Order #{{ order.id }}</strong>
+          <span style="color: var(--fg-mute); font-size: var(--text-sm)">{{ order.created_at|date:"M d, Y" }}</span>
+        </div>
+
+        {% for item in order.items.all %}
+          <div style="display:flex; justify-content:space-between; padding: 4px 0">
+            <span>{{ item.product.name }} × {{ item.quantity }}</span>
+            <span>${{ item.subtotal }}</span>
+          </div>
+        {% endfor %}
+
+        <div style="display:flex; justify-content:space-between; margin-top: var(--s3); padding-top: var(--s3); border-top: 1px solid var(--rule); font-weight:700">
+          <span>Total</span>
+          <span>${{ order.total }}</span>
+        </div>
+      </div>
+    {% empty %}
+      <p>You haven't placed any orders yet. <a href="{% url 'shop' %}" style="color: var(--indigo)">Start shopping →</a></p>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

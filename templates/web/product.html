@@ -1,0 +1,118 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<main id="main">
+    <div class="container">
+      <div class="crumbs" style="padding-top: var(--s5)"><a href="{% url 'landing' %}">Home</a> <span class="sep">›</span> <a
+          href="{% url 'shop' %}">Shop</a> <span class="sep">›</span> <span>Product</span></div>
+
+      <section class="product-detail">
+        <div class="gallery">
+          <div class="gallery-thumbs">
+          </div>
+          <figure class="gallery-main">
+            <img src="{{ product.image }}"
+              alt="{{ product.name }}" />
+          </figure>
+        </div>
+
+        <div class="pdp-info">
+          <span class="pdp-cat">⚡ Audio · Featured</span>
+          <h1>{{ product.name }}</h1>
+          <div class="rating-row">
+            <span style="color: var(--amber); font-size: 16px">★★★★★</span>
+            <span>4.9 / 5 </span>
+            <span style="color: var(--rule-strong)">|</span>
+            <span style="color: var(--emerald); display:inline-flex; align-items:center; gap:6px"><span
+                style="width:6px;height:6px;background:var(--emerald);border-radius:999px;display:inline-block"></span>
+              In stock · {{ total_count }}</span>
+          </div>
+          <p class="desc">{{ product.description }}</p>
+
+          <div class="price-row">
+            <span class="now">${{ product.price_now }}</span>
+            <span class="was">${{ product.price_was }}</span>
+            <span class="save">Save {{ product.save_perc }}%</span>
+          </div>
+
+          <div class="option-block">
+            <div class="label">Color</div>
+            <div class="color-swatches">
+              <button class="is-active"
+                style="background: #FFFFFF; border-radius: 999px; outline-color: var(--rule-strong)"
+                aria-label="White"></button>
+              <button style="background: #0F172A" aria-label="Midnight"></button>
+              <button style="background: #F97316" aria-label="Orange"></button>
+              <button style="background: #4F46E5" aria-label="Indigo"></button>
+            </div>
+          </div>
+
+          <div class="option-block">
+            <div class="label">Configuration</div>
+            <div class="option-pills">
+              <button>Single</button>
+              <button class="is-active">Stereo pair · save $40</button>
+              <button>3-pack · save $120</button>
+            </div>
+          </div>
+
+          <div class="option-block">
+            <div class="label">AppleCare+</div>
+            <div class="option-pills">
+              <button class="is-active">No coverage</button>
+              <button>2 years · $39</button>
+              <button>3 years · $59</button>
+            </div>
+          </div>
+
+          <div class="pdp-cta">
+            <div class="qty">
+              <button type="button" data-act="-" aria-label="Decrease">−</button>
+              <input type="text" value="1" inputmode="numeric" aria-label="Quantity" />
+              <button type="button" data-act="+" aria-label="Increase">+</button>
+            </div>
+            <a href="{% url 'add_to_cart' product.slug %}" class="btn btn--indigo" style="flex:1; min-width:160px">Add to cart →</a>
+            <a href="{% url 'add_to_cart' product.slug %}" class="btn btn--ink">Buy now</a>
+            <button class="icon-btn" aria-label="Add to wishlist" style="background: var(--bg)">♡</button>
+          </div>
+
+          <div class="pdp-features">
+            <div class="pf"><span class="ic">⚡</span><span>Free shipping over $50</span></div>
+            <div class="pf"><span class="ic">↺</span><span>30-day free returns</span></div>
+            <div class="pf"><span class="ic">★</span><span>2-year limited warranty</span></div>
+            <div class="pf"><span class="ic">✓</span><span>Authentic Apple product</span></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Related products -->
+      <section class="section">
+        <div class="section-head">
+          <h2>You may also like</h2>
+          <a href="{% url 'shop' %}" class="view-all">All products →</a>
+        </div>
+        <div class="products">
+          {% for s in related_products %}
+          <article class="product-card">
+            <div class="img-wrap"><button class="wishlist">♡</button><img
+                src="{{ s.image }}"
+                alt="{{ s.name }}" /></div>
+            <div class="stock"><span class="dot"></span>In stock · {{ total_count }} items</div>
+            <a href="{% url 'product' s.slug %}" class="name">{{ s.name }}</a>
+            <div class="price"><span class="now">${{ s.price_now}}</span></div>
+            <div class="stars">★★★★☆ <span class="count">{{ total_count }}</span></div>
+            <a href="{% url 'add_to_cart' s.slug %}" class="btn">Order now →</a>
+          </article>
+          {% endfor %}
+
+          
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+{% endblock %}
